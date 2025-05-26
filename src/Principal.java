@@ -8,8 +8,8 @@ public class Principal {
         miPelicula.muestraFichaTecnica();
         miPelicula.evalua(8);
         miPelicula.evalua(8);
-        System.out.println("Suma de las evaluaciones: " + miPelicula.sumaDeLasEvaluaciones);
-        System.out.println("Total de evaluaciones: " + miPelicula.totalDeEvaluaciones);
+        miPelicula.evalua(10);
+        System.out.println("Total de evaluaciones: " + miPelicula.getTotalDeEvaluaciones());
         System.out.println("La media de la película es: " + miPelicula.calculaMedia());
 
         Pelicula otraPelicula = new Pelicula();
@@ -20,8 +20,8 @@ public class Principal {
         otraPelicula.muestraFichaTecnica();
         otraPelicula.evalua(9.8);
         otraPelicula.evalua(9.8);
-        System.out.println("Suma de las evaluaciones: " + otraPelicula.sumaDeLasEvaluaciones);
-        System.out.println("Total de evaluaciones: " + otraPelicula.totalDeEvaluaciones);
+        otraPelicula.evalua(8.9);
+        System.out.println("Total de evaluaciones: " + otraPelicula.getTotalDeEvaluaciones());
         System.out.println("La media de la película es: " + otraPelicula.calculaMedia());
     }
 }
