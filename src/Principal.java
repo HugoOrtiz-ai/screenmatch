@@ -1,3 +1,4 @@
+import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -37,5 +38,11 @@ public class Principal {
         miSerie.setMinutosPorEpisodio(50);
 
         miSerie.muestraFichaTecnica();
+
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miPelicula);
+        calculadora.incluye(otraPelicula);
+        calculadora.incluye(miSerie);
+        System.out.println("\nEl tiempo total de tus películas y/o series favoritas es: " + calculadora.getTiempoTotal() + " minutos.");
     }
 }
