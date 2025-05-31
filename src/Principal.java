@@ -1,9 +1,13 @@
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
+import com.aluracursos.screenmatch.calculos.FiltroRecomendacion;
+import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
+        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
+
         Pelicula miPelicula = new Pelicula();
         miPelicula.setNombre("Encanto");
         miPelicula.setFechaDeLanzamiento(2021);
@@ -16,6 +20,7 @@ public class Principal {
         miPelicula.evalua(10);
         System.out.println("Total de evaluaciones: " + miPelicula.getTotalDeEvaluaciones());
         System.out.println("La media de la película es: " + miPelicula.calculaMedia());
+        filtroRecomendacion.filtra(miPelicula);
 
         Pelicula otraPelicula = new Pelicula();
         otraPelicula.setNombre("Matrix");
@@ -29,6 +34,7 @@ public class Principal {
         otraPelicula.evalua(8.9);
         System.out.println("Total de evaluaciones: " + otraPelicula.getTotalDeEvaluaciones());
         System.out.println("La media de la película es: " + otraPelicula.calculaMedia());
+        filtroRecomendacion.filtra(otraPelicula);
 
         Serie miSerie = new Serie();
         miSerie.setNombre("La casa del Dragón");
@@ -38,6 +44,13 @@ public class Principal {
         miSerie.setMinutosPorEpisodio(50);
 
         miSerie.muestraFichaTecnica();
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("La casa Targaryen");
+        episodio.setSerie(miSerie);
+        episodio.setTotalVisualizaciones(75);
+        filtroRecomendacion.filtra(episodio);
 
         CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
         calculadora.incluye(miPelicula);
